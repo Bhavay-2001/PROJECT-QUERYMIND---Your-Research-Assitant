@@ -7,10 +7,8 @@ from langchain.chains.history_aware_retriever import create_history_aware_retrie
 from langchain_core.prompts import MessagesPlaceholder
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.prompts import ChatPromptTemplate
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from langchain.vectorstores.qdrant import Qdrant
-from langchain_huggingface import HuggingFaceEndpoint
 
 import os
 import json
@@ -30,7 +28,6 @@ class ArxivModel:
         for key, value in os.environ.items():
             if key in os.getenv(key):
                 os.environ[key] = value
-        print("Environment variables loaded!")
 
     def load_json(self, file_path):
         with open(file_path, "r") as f:
@@ -119,7 +116,6 @@ class ArxivModel:
 
     def get_model(self):
         self.create_retriever()
-        # self.llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-pro-002")
         self.llm= ChatGroq(groq_api_key=config.GROQ_API_KEY, model_name="Gemma2-9b-it")
         rag_chain = self.create_conversational_rag_chain()
         return rag_chain, self.session_config

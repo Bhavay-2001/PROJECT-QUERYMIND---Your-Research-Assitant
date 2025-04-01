@@ -28,7 +28,7 @@ def create_index(dir_path: str) -> str:
 
     qdrant_client = QdrantClient(
         url=config.QDRANT_URL,
-        api_key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.SPPxvQrCR6meVMnFd_zh2kqRXpTLRtPuMmwvOpnQWSY',  # moved to config for best practice
+        api_key=config.QDRANT_API_KEY,  
         prefer_grpc=False,
         timeout=30
     )
@@ -48,7 +48,7 @@ def create_index(dir_path: str) -> str:
         embedding=config.EMBEDDING_FUNCTION,
         collection_name=st.session_state.COLLECTION_NAME,
         url=config.QDRANT_URL,
-        api_key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.SPPxvQrCR6meVMnFd_zh2kqRXpTLRtPuMmwvOpnQWSY',
+        api_key=config.QDRANT_API_KEY,
         prefer_grpc=False,
         force_recreate=True,
     )
