@@ -10,9 +10,10 @@ cwd = os.getcwd()
 '''.env config
 '''
 load_dotenv(find_dotenv())
-# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
-os.environ["GOOGLE_API_KEY"]="AIzaSyB2OJ0WFrJS_hx1QKhAlUHVOqeHIJjNs7s"
+HUGGINGFACEHUB_API_TOKEN = os.getenv('HUGGINGFACEHUB_API_TOKEN')
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+
 '''Constant config
 '''
 ERROR_MESSAGE = 'We are facing technical issue at this moment.'
