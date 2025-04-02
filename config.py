@@ -11,7 +11,7 @@ cwd = os.getcwd()
 '''
 load_dotenv(find_dotenv())
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
-GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+GROQ_API_KEY = "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"
 
 '''Constant config
 '''
@@ -22,7 +22,7 @@ ERROR_MESSAGE = 'We are facing technical issue at this moment.'
 # QDRANT_URL = 'http://localhost:6333'
 QDRANT_URL = 'https://a5993180-1deb-4616-880d-d61e5caeb676.europe-west3-0.gcp.cloud.qdrant.io'
 JWT_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3MiOiJtIn0.eVcMqxeuPvG2O9aY1275XEN4ordz26AlK_e-eB2YFdc"
-QDRANT_API_KEY = os.getenv('QDRANT_API_KEY')
+QDRANT_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.SPPxvQrCR6meVMnFd_zh2kqRXpTLRtPuMmwvOpnQWSY"
 client = QdrantClient(
     url=QDRANT_URL, 
     api_key=QDRANT_API_KEY,
